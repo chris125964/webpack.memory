@@ -30,6 +30,14 @@ const config = {
         use: "babel-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.(css)$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+      },
     ],
   },
   plugins: [
@@ -40,7 +48,7 @@ const config = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "public", to: "assets/images" },
+        { from: "public/images", to: "assets/images" },
       ],
     }),
 
