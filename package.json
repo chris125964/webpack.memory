@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack",
     "prod": "serve dist",
     "start": "node server.js",
-    "heroku-postbuild": "webpack --help"
+    "heroku-postbuild": "npm list --depth=0"
   },
   "dependencies": {
     "react": "^17.0.2",
