@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
-    "start": "serve dist"
+    "prod": "serve dist",
+    "start": "node server.js"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -26,6 +27,7 @@
     "copy-webpack-plugin": "^9.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
     "serve": "^11.3.2",
     "style-loader": "^2.0.0",
