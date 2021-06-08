@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { MemGrid } from "./MemGrid";
 import { Content } from "../logic/content";
+import { Header } from "./Header";
+import { Main } from "./Main";
+import "./style.css";
 
 interface AppProps {
   idx: number;
@@ -18,19 +21,19 @@ const App = ({ idx }: AppProps) => {
 
   content = createContent();
 
-  let a = "";
-  if (idx === 1) {
-    a = "001";
-  }
-
-  const onNewGame = () => {
-    setNrGame(nrGame + 1);
-  };
-
   return (
-    <div>
-      <MemGrid content={content} onNewGame={onNewGame} />
+    <div className="container">
+      <Header />
+      <div className="content">
+        <Main />
+        {/* <aside className="left-sidebar">LEFT SIDEBAR</aside> */}
+        {/* <aside className="right-sidebar">RIGHT SIDEBAR</aside> */}
+      </div>
+      {/* <footer>FOOTER</footer> */}
     </div>
+    // <div>
+    //   <MemGrid content={content} onNewGame={onNewGame} />
+    // </div>
   );
 };
 

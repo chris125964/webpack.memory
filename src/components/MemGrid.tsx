@@ -1,25 +1,28 @@
 import "./style.css";
 import "./modal.css";
 
-import * as actionTypes from "../redux/sample/actionTypes";
-
 import React, { useState } from "react";
 import { MemInfo } from "./MemInfo";
-import { MemTiles } from "./MemTiles";
+import { MemTile } from "./MemTile";
 import { Content } from "../logic/content";
 
-interface TGridProps {
-  content: Content;
-  onNewGame: () => void;
-}
+interface TGridProps {}
 
-export const MemGrid = ({ onNewGame }: TGridProps) => {
+export const MemGrid = ({}: TGridProps) => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  return (
-    <div>
-      <MemInfo onNewGame={onNewGame} />
-      <MemTiles />
-    </div>
-  );
+  const renderTile = () => {
+    return <MemTile />;
+  };
+
+  let arr: number[] = [];
+  for (let loop = 0; loop < 30; loop += 1) {
+    arr.push(loop);
+  }
+
+  const renderTiles = () => {
+    return arr.map((ob) => renderTile());
+  };
+
+  return <div>{renderTiles()}</div>;
 };
