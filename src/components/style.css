@@ -88,11 +88,6 @@
   height: 30px;
   /* margin-bottom: 5px; */
 }
-.memtile {
-  background-color: green;
-  width: 150px;
-  height: 150px;
-}
 
 /* -------------------------------------------- */
 
@@ -149,5 +144,58 @@ footer {
   .right-sidebar {
     flex: 1;
     order: 3;
+  }
+}
+
+/* @media (min-width: 160px) {
+  .memtile {
+    background-color: blue;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .memtile {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 640px) {
+  .memtile {
+    background-color: green;
+    width: 150px;
+    height: 150px;
+  }
+} */
+
+.memtile {
+  background-color: aqua;
+  width: 160px;
+  height: 160px;
+}
+
+@media (max-width: 1000px) {
+  .memtile {
+    background-color: orange;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .memtile {
+    background-color: green;
+    width: 128px;
+    height: 128px;
+  }
+}
+@media (max-width: 320px) {
+  .memtile {
+    background-color: red;
+    width: 80px;
+    height: 80px;
   }
 }

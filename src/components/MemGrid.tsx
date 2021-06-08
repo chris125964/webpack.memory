@@ -15,8 +15,15 @@ export const MemGrid = ({}: TGridProps) => {
     return <MemTile />;
   };
 
+  let size = 30;
+  if (window.innerWidth <= 320) {
+    size = 16;
+  } else if (window.innerWidth <= 640) {
+    size = 20;
+  }
+
   let arr: number[] = [];
-  for (let loop = 0; loop < 30; loop += 1) {
+  for (let loop = 0; loop < size; loop += 1) {
     arr.push(loop);
   }
 
