@@ -189,6 +189,17 @@ footer {
   }
 }
 
+@media (max-width: 960px) {
+  .header {
+    background-color: blueviolet;
+    height: 72px;
+  }
+  .memtile {
+    background-color: green;
+    width: 120px;
+    height: 120px;
+  }
+}
 @media (max-width: 640px) {
   .header {
     background-color: blueviolet;
@@ -202,6 +213,7 @@ footer {
 @media (max-width: 600px) {
   .header {
     background-color: blueviolet;
+    height: 72px;
   }
   .memtile {
     background-color: green;
@@ -212,7 +224,7 @@ footer {
 @media (max-width: 320px) {
   .header {
     background: green;
-    height: 47px;
+    height: 96px;
   }
   .memtile {
     background-color: red;
