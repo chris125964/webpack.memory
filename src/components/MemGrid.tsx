@@ -2,6 +2,7 @@ import './style.css';
 import './modal.css';
 
 import React, { useState } from 'react';
+import { clickTile } from '../redux/sample/actionCreators';
 import { MemInfo } from './MemInfo';
 import { MemTile } from './MemTile';
 import { Content } from '../logic/content';
@@ -14,9 +15,9 @@ export const MemGrid = ({}: TGridProps) => {
   const dispatch = () => {};
   const extensions = getView();
 
-  const clickTile = (index: number, nr: number) => {
-    console.log(`clickTile`);
-  };
+  // const clickTile = (index: number, nr: number) => {
+  //   console.log(`clickTile`);
+  // };
 
   const renderTile = (index: number) => {
     return (
