@@ -4,6 +4,31 @@
   --grid-gap: 12px;
   --image-extension: 95%;
   --tileMargin: 5px;
+  /* 960 */
+  --header-bg-color-960: red;
+  --header-height-960: 72px;
+  --header-memtile-bg-color-960: green;
+  --header-memtile-extension-960: 120px;
+  /* 640 */
+  --header-bg-color-640: blueviolet;
+  --header-height-640: 50px;
+  --header-memtile-bg-color-640: green;
+  --header-memtile-extension-640: 128px;
+  /* 600 */
+  --header-bg-color-600: blueviolet;
+  --header-height-600: 72px;
+  --header-memtile-bg-color-600: green;
+  --header-memtile-extension-600: 120px;
+  /* 360 */
+  --header-bg-color-360: teal;
+  --header-height-360: 108px;
+  --header-memtile-bg-color-360: violet;
+  --header-memtile-extension-360: 90px;
+  /* 320 */
+  --header-bg-color-320: green;
+  --header-height-320: 96px;
+  --header-memtile-bg-color-320: red;
+  --header-memtile-extension-320: 80px;
 }
 
 .title {
@@ -171,14 +196,21 @@ footer {
 
 .header {
   background-color: darkgoldenrod;
+  display: flex;
+}
+.headerElem {
+  margin-left: 10px;
+  padding: 0px 5px;
+  background-color: grey;
+  font-size: 12px;
 }
 .memtile {
   background-color: aqua;
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .header {
     background-color: red;
   }
@@ -187,48 +219,59 @@ footer {
     width: 160px;
     height: 160px;
   }
-}
+} */
 
 @media (max-width: 960px) {
   .header {
-    background-color: blueviolet;
-    height: 72px;
+    background-color: var(--header-bg-color-960);
+    height: var(--header-height-960);
   }
   .memtile {
-    background-color: green;
-    width: 120px;
-    height: 120px;
+    background-color: var(--header-memtile-bg-color-960);
+    width: var(--header-memtile-extension-960);
+    height: var(--header-memtile-extension-960);
   }
 }
 @media (max-width: 640px) {
   .header {
-    background-color: blueviolet;
+    background-color: var(--header-bg-color-640);
   }
   .memtile {
-    background-color: green;
-    width: 128px;
-    height: 128px;
+    background-color: var(--header-memtile-bg-color-640);
+    width: var(--header-memtile-extension-640);
+    height: var(--header-memtile-extension-640);
   }
 }
 @media (max-width: 600px) {
   .header {
-    background-color: blueviolet;
-    height: 72px;
+    background-color: var(--header-bg-color-600);
+    height: var(--header-height-600);
   }
   .memtile {
-    background-color: green;
-    width: 120px;
-    height: 120px;
+    background-color: var(--header-memtile-bg-color-600);
+    width: var(--header-memtile-extension-600);
+    height: var(--header-memtile-extension-600);
+  }
+}
+@media (max-width: 360px) {
+  .header {
+    background: var(--header-bg-color-360);
+    height: var(--header-height-360);
+  }
+  .memtile {
+    background-color: var(--header-memtile-bg-color-360);
+    width: var(--header-memtile-extension-360);
+    height: var(--header-memtile-extension-360);
   }
 }
 @media (max-width: 320px) {
   .header {
-    background: green;
-    height: 96px;
+    background: var(--header-bg-color-320);
+    height: var(--header-height-320);
   }
   .memtile {
-    background-color: red;
-    width: 80px;
-    height: 80px;
+    background-color: var(--header-memtile-bg-color-320);
+    width: var(--header-memtile-extension-320);
+    height: var(--header-memtile-extension-320);
   }
 }

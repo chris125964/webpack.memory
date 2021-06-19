@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { MemGrid } from "./MemGrid";
-import { Content } from "../logic/content";
-import { Header } from "./Header";
-import { Main } from "./Main";
-import "./style.css";
+import React, { useState } from 'react';
+import { MemGrid } from './MemGrid';
+import { Content } from '../logic/content';
+import { Header } from './Header';
+import { Main } from './Main';
+import './style.css';
 
 interface AppProps {
   idx: number;
@@ -20,6 +20,13 @@ const App = ({ idx }: AppProps) => {
   };
 
   content = createContent();
+
+  // let r = document.querySelector(':root');
+  // let rs = getComputedStyle(r);
+  // Alert the value of the --blue variable
+  // alert('The value of --tileWidth is: ' + rs.getPropertyValue('--tileWidth'));
+  // https://www.w3schools.com/Css/tryit.asp?filename=trycss3_var_js
+  // r?.style.setProperty('--bg-color960', 'red');
 
   return (
     <div className="container">
