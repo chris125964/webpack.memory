@@ -2,17 +2,18 @@ import './style.css';
 import './modal.css';
 
 import React, { useState } from 'react';
-import { clickTile } from '../redux/sample/actionCreators';
 import { MemInfo } from './MemInfo';
 import { MemTile } from './MemTile';
 import { Content } from '../logic/content';
 import { getView } from '../logic/view';
+import { clickTile } from '../redux/sample/actionCreators';
+import { useDispatch } from 'react-redux';
 
 interface TGridProps {}
 
 export const MemGrid = ({}: TGridProps) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const dispatch = () => {};
+  const dispatch = useDispatch();
   const extensions = getView();
 
   // const clickTile = (index: number, nr: number) => {
@@ -24,6 +25,8 @@ export const MemGrid = ({}: TGridProps) => {
       <MemTile
         key={index}
         nr={index}
+        index={1}
+        indexx={1}
         loop={index}
         click={clickTile}
         dispatch={dispatch}
