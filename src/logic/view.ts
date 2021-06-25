@@ -63,6 +63,7 @@ export const getView = () => {
     // } else if (window.innerWidth <= 1500) {
     //  -> 150px
     // 50px + (10 x 150) x (5 x 150)
+    memView.device = 'Notebook';
     memView.horizontal = 8;
     memView.vertical = 4;
     memView.length = 150;
