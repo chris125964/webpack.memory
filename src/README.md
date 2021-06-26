@@ -10,3 +10,9 @@ mem {
     nr: // (nr) hier steht der Wert des Tiles
 }
 ```
+
+## Kommandos
+
+### yarn mocha
+
+startet die Test-Skripte
