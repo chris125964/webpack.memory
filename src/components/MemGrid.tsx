@@ -9,25 +9,24 @@ import { getView } from '../logic/view';
 import { clickTile } from '../redux/sample/actionCreators';
 import { useDispatch } from 'react-redux';
 
-interface TGridProps {}
+interface TGridProps {
+  content: Content;
+}
 
-export const MemGrid = ({}: TGridProps) => {
+export const MemGrid = (props: TGridProps) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const dispatch = useDispatch();
   const extensions = getView();
 
-  // const clickTile = (index: number, nr: number) => {
-  //   console.log(`clickTile`);
-  // };
-
   const renderTile = (index: number) => {
+    const tile = props?.content?.getTile(index);
     return (
       <MemTile
-        key={index}
-        nr={index}
-        index={1}
-        indexx={1}
         loop={index}
+        key={index}
+        nr={tile?.nr ?? 0}
+        index={tile?.index ?? 0}
+        indexx={tile?.indexx ?? 0}
         click={clickTile}
         dispatch={dispatch}
       />

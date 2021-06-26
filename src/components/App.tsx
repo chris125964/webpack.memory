@@ -16,6 +16,7 @@ const App = ({ idx }: AppProps) => {
   const createContent = () => {
     let content = new Content(15);
     content.createTileContent();
+    content.showContent();
     return content;
   };
 
@@ -32,7 +33,7 @@ const App = ({ idx }: AppProps) => {
     <div className="container">
       <Header />
       <div className="content">
-        <Main />
+        <Main content={content} />
         {/* <aside className="left-sidebar">LEFT SIDEBAR</aside> */}
         {/* <aside className="right-sidebar">RIGHT SIDEBAR</aside> */}
       </div>

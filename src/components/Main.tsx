@@ -1,10 +1,15 @@
-import React from "react";
-import { MemGrid } from "./MemGrid";
+import React from 'react';
+import { Content } from '../logic/content';
+import { MemGrid } from './MemGrid';
 
-export const Main = (): JSX.Element => {
+interface MainProps {
+  content: Content;
+}
+
+export const Main = (props: MainProps): JSX.Element => {
   return (
     <main className="main">
-      <MemGrid />
+      <MemGrid content={props.content} />
     </main>
   );
 };

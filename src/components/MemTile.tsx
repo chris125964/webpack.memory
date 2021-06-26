@@ -22,42 +22,45 @@ interface MemTileProps {
   dispatch: (action: MemoryAction) => void;
 }
 
-export const MemTile = ({
-  loop,
-  nr: imageIndex,
-  index,
-  indexx,
-  click,
-  dispatch,
-}: MemTileProps) => {
+export const MemTile = (
+  //   {
+  //   loop,
+  //   nr: imageIndex,
+  //   index,
+  //   indexx,
+  //   click,
+  //   dispatch,
+  // }
+  props: MemTileProps,
+) => {
   function getTileState(index: number): TileState {
     const tiles = useSelector((state: RootState) => state.tiles);
     return tiles[index];
   }
-  let tileCharacter = getTileState(loop);
+  let tileCharacter = getTileState(props.loop);
 
   const changeColor =
     (loop: number, nr: number, dispatch: (action: MemoryAction) => void) =>
     () => {
-      click(loop, nr, dispatch);
+      props.click(loop, nr, dispatch);
     };
   // const clickFunc = changeColor(loop, nr, dispatch);
 
   const renderButton = (tileState: TileState) => {
-    const testid = `button.${indexx}.${index}`;
+    const testid = `button.${props.indexx}.${props.index}`;
     let style: string = closed;
     let clickFunc = undefined;
     let buttonContent;
     switch (tileState) {
       case TileState.OPEN:
         style = open;
-        clickFunc = changeColor(loop, imageIndex, dispatch);
-        buttonContent = <TileContent imageIndex={`${imageIndex}`} />;
+        clickFunc = changeColor(props.loop, props.nr, props.dispatch);
+        buttonContent = <TileContent imageIndex={`${props.nr}`} />;
         break;
       case TileState.CLOSED:
         style = closed;
-        clickFunc = changeColor(loop, imageIndex, dispatch);
-        buttonContent = <>imageIndex({imageIndex})</>;
+        clickFunc = changeColor(props.loop, props.nr, props.dispatch);
+        buttonContent = <>imageIndex({props.nr})</>;
         break;
       case TileState.SOLVED:
         style = solved;
@@ -66,8 +69,13 @@ export const MemTile = ({
         break;
     }
     return (
-      <button key={index} className={`memtile ${style}`} onClick={clickFunc}>
-        Tile ({style})
+      <button
+        key={props.index}
+        className={`memtile ${style}`}
+        onClick={clickFunc}
+      >
+        Tile ({style})<p>(indexx: {props.indexx})</p>
+        <p>(index: {props.index})</p>
       </button>
     );
   };

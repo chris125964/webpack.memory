@@ -47,6 +47,8 @@ export default function reducer(
   currentState = initialState,
   action: MemoryAction,
 ) {
+  console.log(`currentState: ${JSON.stringify(currentState, null, 2)}`);
+
   switch (action.type) {
     case actionTypes.SET_TILE:
       let currentStatus = currentState.status;
