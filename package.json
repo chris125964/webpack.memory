@@ -8,7 +8,9 @@
     "build": "cross-env NODE_ENV=production webpack",
     "prod": "serve dist",
     "start": "node server.js",
-    "mocha": "mocha"
+    "mocha": "mocha",
+    "test": "testcafe chrome:headless test/test1.spec.ts",
+    "test:chrome": "testcafe chrome test/testcafe.spec.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -25,6 +27,7 @@
     "mocha": "^9.0.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.3",
+    "testcafe": "^1.14.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   },

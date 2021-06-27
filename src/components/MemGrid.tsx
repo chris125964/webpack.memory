@@ -6,7 +6,7 @@ import { MemInfo } from './MemInfo';
 import { MemTile } from './MemTile';
 import { Content } from '../logic/content';
 import { getView } from '../logic/view';
-import { clickTile } from '../redux/sample/actionCreators';
+import { clickTile } from '../redux/memory/actionCreators';
 import { useDispatch } from 'react-redux';
 
 interface TGridProps {

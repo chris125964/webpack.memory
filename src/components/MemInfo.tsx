@@ -1,9 +1,9 @@
-import "./style.css";
+import './style.css';
 
-import React from "react";
-// import { RootState } from "../redux/sample/reducer";
+import React from 'react';
+// import { RootState } from "../redux/memory/reducer";
 // import { useSelector } from "react-redux";
-// import { newGame } from "../redux/sample/actionCreators";
+// import { newGame } from "../redux/memory/actionCreators";
 // import { useDispatch } from "react-redux";
 
 interface MemInfoProps {

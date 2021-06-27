@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-import { MemoryAction } from './type';
+import { MemoryAction } from '../memory/type';
 import { MemoryEvent } from '../../enums/MemoryEvent';
 import { MemoryState } from '../../enums/MemoryState';
 import { Tile } from '../../model/tile';

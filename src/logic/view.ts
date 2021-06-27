@@ -70,5 +70,9 @@ export const getView = () => {
     memView.header.height = 50;
   }
 
+  console.log(
+    `device: ${memView.device} -> ${memView.horizontal} x ${memView.vertical}`,
+  );
+
   return memView;
 };

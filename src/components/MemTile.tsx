@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { MemoryAction } from '../redux/memory/type';
 import { TileState } from '../enums/TileState';
-import { RootState } from '../redux/sample/reducer';
+import { RootState } from '../redux/memory/reducer';
 import { useSelector } from 'react-redux';
 import { TileContent } from './TileContent';
 
@@ -70,6 +70,7 @@ export const MemTile = (
     }
     return (
       <button
+        data-testid={`button.${props.indexx}.${props.index}`}
         key={props.index}
         className={`memtile ${style}`}
         onClick={clickFunc}
