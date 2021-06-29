@@ -4,6 +4,7 @@ import { Content } from '../logic/content';
 import { Header } from './Header';
 import { Main } from './Main';
 import './style.css';
+import { getView } from '../logic/view';
 
 interface AppProps {
   idx: number;
@@ -13,14 +14,17 @@ const App = ({ idx }: AppProps) => {
   const [nrGame, setNrGame] = useState<number>(0);
   let content: Content;
 
-  const createContent = () => {
-    let content = new Content(15);
+  const createContent = (nrTiles: number) => {
+    console.log(`nr tiles: ${nrTiles}`);
+    let content = new Content(nrTiles);
     content.createTileContent();
     content.showContent();
     return content;
   };
 
-  content = createContent();
+  let extensions = getView();
+
+  content = createContent(extensions.horizontal * extensions.vertical);
 
   // let r = document.querySelector(':root');
   // let rs = getComputedStyle(r);
@@ -31,7 +35,7 @@ const App = ({ idx }: AppProps) => {
 
   return (
     <div className="container">
-      <Header />
+      <Header extensions={extensions} />
       <div className="content">
         <Main content={content} />
         {/* <aside className="left-sidebar">LEFT SIDEBAR</aside> */}

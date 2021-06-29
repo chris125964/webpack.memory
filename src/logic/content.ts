@@ -14,6 +14,11 @@ export class Content {
   private size: number;
   private singleContent: MemContent[];
 
+  /**
+   * Creates an instance of Content.
+   * @param {number} size Anzahl der Teile insgesamt (also durch 2 teilbar)
+   * @memberof Content
+   */
   constructor(size: number) {
     this.size = size;
     this.singleContent = new Array<MemContent>();
@@ -53,7 +58,7 @@ export class Content {
 
   createTileContent = () => {
     //
-    this.singleContent = this.createXFromY(15);
+    this.singleContent = this.createXFromY(this.size / 2);
   };
 
   /** "mischt" ein Array mit Zahlen durch. Der Algorithmus ist geklaut:

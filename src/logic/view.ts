@@ -1,4 +1,4 @@
-type TMemView = {
+export type TMemView = {
   device: string;
   horizontal: number;
   vertical: number;

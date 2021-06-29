@@ -10,10 +10,9 @@ const modalPM = new ModalPM();
 test('Memory - best moves', async (t) => {
   // Test code
   await t.resizeWindow(1000, 800);
-  await t.debug();
 
+  await t.debug();
   for (let loop = 0; loop < 15; loop += 1) {
-    await t.debug();
     memoryPM.clickTile(t, loop);
     memoryPM.clickTile(t, loop, false);
   }
