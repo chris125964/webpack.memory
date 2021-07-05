@@ -10,7 +10,7 @@ export function clickTile(
 ) {
   const action: MemoryAction = {
     type: actionTypes.SET_TILE,
-    mem: { index, nr, status: MemoryState.NO_TILE_OPEN },
+    mem: { index, nr, status: MemoryState.NO_TILE_OPEN, nrTiles: 0 },
   };
 
   dispatch(action);
@@ -19,15 +19,18 @@ export function clickTile(
 export function finishGame(dispatch: (action: MemoryAction) => void) {
   const action: MemoryAction = {
     type: actionTypes.FINISH_GAME,
-    mem: { index: 1, nr: 1, status: MemoryState.ERROR },
+    mem: { index: 1, nr: 1, status: MemoryState.ERROR, nrTiles: 0 },
   };
   dispatch(action);
 }
 
-export function newGame(dispatch: (action: MemoryAction) => void) {
+export function newGame(
+  nrTiles: number,
+  dispatch: (action: MemoryAction) => void,
+) {
   const action: MemoryAction = {
     type: actionTypes.NEW_GAME,
-    mem: { index: 1, nr: 1, status: MemoryState.ERROR },
+    mem: { index: 1, nr: 1, status: MemoryState.ERROR, nrTiles },
   };
   dispatch(action);
 }

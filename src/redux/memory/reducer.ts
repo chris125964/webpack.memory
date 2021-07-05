@@ -7,7 +7,7 @@ import { Tile } from '../../model/tile';
 import { TileState } from '../../enums/TileState';
 import { change } from '../../logic/statemachine';
 
-let iniTiles = Array(30).fill(TileState.CLOSED);
+let iniTiles = Array(40).fill(TileState.CLOSED);
 
 export interface RootState {
   tile1: Tile;
@@ -134,7 +134,7 @@ export default function reducer(
       let newState3 = { ...currentState };
       newState3.nrMoves = 0;
       newState3.nrPairs = 0;
-      newState3.tiles = Array(30).fill(TileState.CLOSED);
+      newState3.tiles = Array(40).fill(TileState.CLOSED);
       newState3.finished = false;
 
       return newState3;

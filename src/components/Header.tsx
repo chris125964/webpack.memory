@@ -1,11 +1,22 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { getView, TMemView } from '../logic/view';
+import { newGame } from '../redux/memory/actionCreators';
 
 interface HeaderProps {
   extensions: TMemView;
+  onNewGame: () => void;
+  nrTiles: number;
 }
 
 export const Header = (props: HeaderProps): JSX.Element => {
+  const dispatch = useDispatch();
+
+  const onNewGame2 = () => {
+    newGame(props.nrTiles, dispatch);
+    props.onNewGame();
+  };
+
   return (
     <header className="header">
       <div className="headerElem">
@@ -19,6 +30,9 @@ export const Header = (props: HeaderProps): JSX.Element => {
         w x h: {window.innerWidth} x {window.innerHeight}
       </div>
       <div className="headerElem">{props.extensions.device}</div>
+      <button data-testid="Header.new-game" onClick={onNewGame2}>
+        Neues Spiel
+      </button>
     </header>
   );
 };

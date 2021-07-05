@@ -16,3 +16,10 @@ mem {
 ### yarn mocha
 
 startet die Test-Skripte
+
+## Sonstiges
+
+### Deployment
+
+In Procfile muss der Befehl _web: npm start_ stehen, sonst geht's nicht
+Außerdem muss in _Settings_ das buildpack _heroku/nodejs_ ausgewählt werden (zumindest, wenn man eine webpack-Applikation entwickelt)

@@ -64,7 +64,7 @@ export const getView = () => {
     //  -> 150px
     // 50px + (10 x 150) x (5 x 150)
     memView.device = 'Notebook';
-    memView.horizontal = 8;
+    memView.horizontal = 10;
     memView.vertical = 4;
     memView.length = 150;
     memView.header.height = 50;
