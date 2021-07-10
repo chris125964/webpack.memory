@@ -14,6 +14,7 @@ export interface RootState {
   tile2: Tile;
   status: MemoryState;
   tiles: TileState[];
+  nrTiles: number;
   nrMoves: number;
   nrPairs: number;
   finished: boolean;
@@ -25,6 +26,7 @@ let initialState = {
   tile2: new Tile(),
   status: MemoryState.NO_TILE_OPEN,
   tiles: iniTiles,
+  nrTiles: 0,
   nrMoves: 0,
   nrPairs: 0,
   finished: false,
@@ -84,6 +86,7 @@ export default function reducer(
       let tile2 = new Tile();
       tile1.value = action.mem.nr;
       let nrPairs = currentState.nrPairs;
+      let nrTiles = currentState.nrTiles;
 
       let tiles;
       switch (newStatus) {
@@ -119,9 +122,10 @@ export default function reducer(
         tile2,
         status: newStatus,
         tiles,
+        nrTiles,
         nrMoves: currentState.nrMoves + 1,
         nrPairs,
-        finished: nrPairs === 15,
+        finished: nrPairs === currentState.nrTiles / 2,
         newGame: false,
       };
       return newState;
@@ -132,9 +136,10 @@ export default function reducer(
       break;
     case actionTypes.NEW_GAME:
       let newState3 = { ...currentState };
+      newState3.nrTiles = action.mem.nrTiles;
       newState3.nrMoves = 0;
       newState3.nrPairs = 0;
-      newState3.tiles = Array(40).fill(TileState.CLOSED);
+      newState3.tiles = Array(action.mem.nrTiles).fill(TileState.CLOSED);
       newState3.finished = false;
 
       return newState3;
