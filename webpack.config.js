@@ -2,11 +2,13 @@ const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
 const isProd = process.env.NODE_ENV === "production";
 
 const config = {
   mode: isProd ? "production" : "development",
+
   entry: {
     index: "./src/index.tsx",
   },
@@ -40,6 +42,7 @@ const config = {
       },
     ],
   },
+  devtool: false,
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
@@ -51,6 +54,7 @@ const config = {
         { from: "public/images", to: "assets/images" },
       ],
     }),
+    new SourceMapDevToolPlugin({})
 
   ],
 };
