@@ -32,11 +32,11 @@ export const Header = (props: HeaderProps): JSX.Element => {
       <div className="headerElem">
         w x h: {window.innerWidth} x {window.innerHeight}
       </div>
-      <div className="headerElem">{props.extensions.device}</div>
+      <div className="headerElem device">{props.extensions.device}</div>
       <div className="headerElem"># Clicks {nrMoves}</div>
       <div className="headerElem"># Paare {nrPairs}</div>
       <button data-testid="Header.new-game" onClick={onNewGame2}>
-        Neues Spiel
+        new game
       </button>
     </header>
   );

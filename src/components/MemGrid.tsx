@@ -43,5 +43,9 @@ export const MemGrid = (props: TGridProps) => {
     return arr.map((ob, index) => renderTile(index));
   };
 
-  return <div key={1}>{renderTiles()}</div>;
+  return (
+    <div className="grid" key={1}>
+      {renderTiles()}
+    </div>
+  );
 };

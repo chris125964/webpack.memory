@@ -68,7 +68,7 @@ export const MemTile = (
       default:
         break;
     }
-    return (
+    return style !== open ? (
       <button
         data-testid={`button.${props.indexx}.${props.index}`}
         key={props.index}
@@ -77,6 +77,15 @@ export const MemTile = (
       >
         Tile ({style})<p>(indexx: {props.indexx})</p>
         <p>(index: {props.index})</p>
+      </button>
+    ) : (
+      <button
+        data-testid={`button.${props.indexx}.${props.index}`}
+        key={props.index}
+        className={`memtile ${style}`}
+        onClick={clickFunc}
+      >
+        <img className="imageTile" src="./public/images/1860-010.jpg" />
       </button>
     );
   };

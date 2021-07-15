@@ -112,6 +112,19 @@ footer {
   background: forestgreen;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: min-content;
+  /* grid-auto-rows: minmax(100px, auto); */
+  grid-template-areas:
+    '. . . .'
+    '. . . .'
+    '. . . .'
+    '. . . .'
+    '. . . .';
+}
+
 .container,
 .content {
   display: flex;
@@ -148,6 +161,7 @@ footer {
   padding: 0px 5px;
   background-color: grey;
   font-size: 12px;
+  line-height: normal;
 }
 
 .open {
@@ -220,6 +234,9 @@ footer {
   .header {
     background: var(--header-bg-color-320);
     height: var(--header-height-320);
+  }
+  .device {
+    display: none;
   }
   .memtile {
     width: var(--header-memtile-extension-320);
