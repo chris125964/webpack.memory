@@ -68,6 +68,8 @@ export const MemTile = (
       default:
         break;
     }
+    let nr = props.nr.toString().padStart(3, '0');
+
     return style !== open ? (
       <button
         data-testid={`button.${props.indexx}.${props.index}`}
@@ -85,7 +87,7 @@ export const MemTile = (
         className={`memtile ${style}`}
         onClick={clickFunc}
       >
-        <img className="imageTile" src="./assets/images/1860-014.jpg" />
+        <img className="imageTile" src={`./assets/images/1860-${nr}.jpg`} />
       </button>
     );
   };
