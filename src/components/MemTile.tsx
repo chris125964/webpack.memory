@@ -85,7 +85,7 @@ export const MemTile = (
         className={`memtile ${style}`}
         onClick={clickFunc}
       >
-        <img className="imageTile" src="./public/images/1860-010.jpg" />
+        <img className="imageTile" src="./assets/images/1860-014.jpg" />
       </button>
     );
   };
