@@ -22,14 +22,14 @@ export const getView = () => {
     length: 80,
     header: { height: 96, fontSize: 12 },
   };
-  if (window.innerWidth <= 320) {
+  if (window.innerWidth < 360) {
     // Unihertz: 320 x 496 -> size: 80px
     // 96 + (4 x 80) x (5 x 80)
     memView.device = 'Unihertz';
     memView.horizontal = 4;
-    memView.vertical = 5;
+    memView.vertical = 6;
     memView.length = 80;
-    memView.header.height = 96;
+    memView.header.height = 16;
   } else if (window.innerWidth <= 360) {
     // 360 x 648 -> size: 90px
     memView.device = 'Galaxy S40';

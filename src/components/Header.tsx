@@ -22,11 +22,11 @@ export const Header = (props: HeaderProps): JSX.Element => {
 
   return (
     <header className="header">
-      <div className="headerElem">
+      <div className="headerElem size">
         size: {props.extensions.horizontal}x{props.extensions.vertical}
       </div>
-      <div className="headerElem">length: {props.extensions.length}</div>
-      <div className="headerElem">
+      <div className="headerElem length">length: {props.extensions.length}</div>
+      <div className="headerElem height">
         header Height: {props.extensions.header.height}
       </div>
       <div className="headerElem">
@@ -35,9 +35,15 @@ export const Header = (props: HeaderProps): JSX.Element => {
       <div className="headerElem device">{props.extensions.device}</div>
       <div className="headerElem"># Clicks {nrMoves}</div>
       <div className="headerElem"># Paare {nrPairs}</div>
-      <button data-testid="Header.new-game" onClick={onNewGame2}>
-        new game
-      </button>
+      <div className="headerElem">
+        <button
+          className="newGame"
+          data-testid="Header.new-game"
+          onClick={onNewGame2}
+        >
+          new game
+        </button>
+      </div>
     </header>
   );
 };
