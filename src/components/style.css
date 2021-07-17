@@ -65,8 +65,8 @@
 }
 
 .image {
-  width: 90%;
-  height: 90%;
+  width: 50%;
+  height: 50%;
 }
 
 .imageTile {
@@ -259,5 +259,9 @@ footer {
   .memtile {
     width: var(--header-memtile-extension-320);
     height: var(--header-memtile-extension-320);
+  }
+  .imageTile {
+    background-color: salmon;
+    padding: 2px;
   }
 }
