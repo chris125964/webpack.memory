@@ -43,8 +43,10 @@ export const MemGrid = (props: TGridProps) => {
     return arr.map((ob, index) => renderTile(index));
   };
 
+  let clazz = extensions.device === 'Notebook' ? 'grid-notebook' : 'grid';
+
   return (
-    <div className="grid" key={1}>
+    <div className={clazz} key={1}>
       {renderTiles()}
     </div>
   );
