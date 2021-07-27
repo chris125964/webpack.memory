@@ -105,8 +105,7 @@ export const MemTile = (
             className={`memtile ${style}`}
             onClick={clickFunc}
           >
-            Tile ({style})<p>(indexx: {props.indexx})</p>
-            <p>(index: {props.index})</p>
+            <img className="imageTile" src={`./assets/images/1860-${nr}.jpg`} />
           </button>
         );
         break;
