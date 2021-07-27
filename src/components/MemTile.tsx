@@ -70,26 +70,51 @@ export const MemTile = (
     }
     let nr = props.nr.toString().padStart(3, '0');
 
-    return style !== open ? (
-      <button
-        data-testid={`button.${props.indexx}.${props.index}`}
-        key={props.index}
-        className={`memtile ${style}`}
-        onClick={clickFunc}
-      >
-        Tile ({style})<p>(indexx: {props.indexx})</p>
-        <p>(index: {props.index})</p>
-      </button>
-    ) : (
-      <button
-        data-testid={`button.${props.indexx}.${props.index}`}
-        key={props.index}
-        className={`memtile ${style}`}
-        onClick={clickFunc}
-      >
-        <img className="imageTile" src={`./assets/images/1860-${nr}.jpg`} />
-      </button>
-    );
+    let jsx;
+    switch (style) {
+      case open:
+        jsx = (
+          <button
+            data-testid={`button.${props.indexx}.${props.index}`}
+            key={props.index}
+            className={`memtile ${style}`}
+            onClick={clickFunc}
+          >
+            <img className="imageTile" src={`./assets/images/1860-${nr}.jpg`} />
+          </button>
+        );
+        break;
+      case closed:
+        jsx = (
+          <button
+            data-testid={`button.${props.indexx}.${props.index}`}
+            key={props.index}
+            className={`memtile ${style}`}
+            onClick={clickFunc}
+          >
+            Tile ({style})<p>(indexx: {props.indexx})</p>
+            <p>(index: {props.index})</p>
+          </button>
+        );
+        break;
+      case solved:
+        jsx = (
+          <button
+            data-testid={`button.${props.indexx}.${props.index}`}
+            key={props.index}
+            className={`memtile ${style}`}
+            onClick={clickFunc}
+          >
+            Tile ({style})<p>(indexx: {props.indexx})</p>
+            <p>(index: {props.index})</p>
+          </button>
+        );
+        break;
+      default:
+        break;
+    }
+
+    return jsx;
   };
 
   return renderButton(tileCharacter);

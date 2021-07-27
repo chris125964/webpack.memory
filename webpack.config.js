@@ -54,6 +54,7 @@ const config = {
       template: "./src/index.html",
       filename: "index.html",
       inject: "body",
+      favicon: "./public/1860-64.png"
     }),
     new CopyPlugin({
       patterns: [
