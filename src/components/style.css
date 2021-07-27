@@ -65,8 +65,9 @@
 }
 
 .image {
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
 }
 
 .imageTile {
@@ -183,7 +184,7 @@ footer {
 }
 
 .imageTile {
-  background-color: red;
+  background-color: cornflowerblue;
   padding: 10px;
 }
 

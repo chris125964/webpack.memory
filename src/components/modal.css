@@ -19,7 +19,8 @@
 }
 
 .display-block {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .display-none {
