@@ -139,6 +139,11 @@ export default function reducer(
       newState3.nrTiles = action.mem.nrTiles;
       newState3.nrMoves = 0;
       newState3.nrPairs = 0;
+      newState3.status = MemoryState.NO_TILE_OPEN;
+      newState3.tile1._index = -1;
+      newState3.tile1._value = -1;
+      newState3.tile2._index = -1;
+      newState3.tile2._value = -1;
       newState3.tiles = Array(action.mem.nrTiles).fill(TileState.CLOSED);
       newState3.finished = false;
 

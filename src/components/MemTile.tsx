@@ -91,10 +91,7 @@ export const MemTile = (
             key={props.index}
             className={`memtile ${style}`}
             onClick={clickFunc}
-          >
-            Tile ({style})<p>(indexx: {props.indexx})</p>
-            <p>(index: {props.index})</p>
-          </button>
+          ></button>
         );
         break;
       case solved:
