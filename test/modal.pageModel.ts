@@ -4,7 +4,7 @@ const testId = (id: string) => {
   return `[data-testid="${id}"]`;
 };
 
-export class ModalPM {
+class ModalPM {
   close: Selector;
 
   constructor() {
@@ -15,3 +15,5 @@ export class ModalPM {
     await t.click(this.close);
   }
 }
+
+export default new ModalPM();

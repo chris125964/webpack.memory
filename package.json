@@ -9,7 +9,7 @@
     "prod": "serve dist",
     "start": "node server.js",
     "mocha": "mocha",
-    "test": "testcafe chrome:headless test/test1.spec.ts",
+    "test": "testcafe chrome:headless test/testcafe.spec.ts",
     "test:chrome": "testcafe chrome test/testcafe.spec.ts"
   },
   "devDependencies": {

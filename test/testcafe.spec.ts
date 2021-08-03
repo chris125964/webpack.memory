@@ -1,23 +1,18 @@
-import { MemoryPM } from './pageModel';
-import { ModalPM } from './modal.pageModel';
+import MemoryPM from './pageModel';
+import ModalPM from './modal.pageModel';
 import { Selector } from 'testcafe';
 
 fixture`Getting Started`.page`http://localhost:9000`;
 
-const memoryPM = new MemoryPM();
-const modalPM = new ModalPM();
-
 test('Memory - best moves', async (t) => {
   // Test code
-  await t.resizeWindow(1000, 800);
+  await t.resizeWindow(1600, 800);
 
-  await t.debug();
-  for (let loop = 0; loop < 15; loop += 1) {
-    memoryPM.clickTile(t, loop);
-    memoryPM.clickTile(t, loop, false);
+  for (let loop = 0; loop < 12; loop += 1) {
+    MemoryPM.clickTile(t, loop);
+    MemoryPM.clickTile(t, loop, false);
   }
-  await t.debug();
-  modalPM.closeModal(t);
-  memoryPM.clickNewGame(t);
+  ModalPM.closeModal(t);
+  MemoryPM.clickNewGame(t);
   await t.debug();
 });

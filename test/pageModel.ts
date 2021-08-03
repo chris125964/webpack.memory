@@ -3,10 +3,11 @@ import { Selector } from 'testcafe';
 const testId = (id: string) => {
   return `[data-testid="${id}"]`;
 };
-export class MemoryPM {
+
+class MemoryPM {
   newGameButton: Selector;
   constructor() {
-    this.newGameButton = Selector(testId('MemInfo.new-game'));
+    this.newGameButton = Selector(testId('Header.new-game'));
   }
 
   async clickTile(t: TestController, index: number, first = true) {
@@ -20,3 +21,5 @@ export class MemoryPM {
     await t.click(this.newGameButton);
   }
 }
+
+export default new MemoryPM();

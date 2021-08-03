@@ -33,7 +33,7 @@ const App = ({ idx }: AppProps) => {
     console.log(`nr tiles: ${nrTiles}`);
     let content = new Content(nrTiles);
     content.createTileContent();
-    // content.showContent();
+    content.showContent();
     return content;
   };
 
