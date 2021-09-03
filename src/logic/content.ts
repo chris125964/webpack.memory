@@ -51,14 +51,15 @@ export class Content {
     for (let loop = 0; loop < x; loop += 1) {
       pairArray.push({ nr: subsetArray[loop].nr, index: 1, indexx: loop });
       pairArray.push({ nr: subsetArray[loop].nr, index: 2, indexx: loop });
+      console.log(`createXFromY: ${loop}: ${subsetArray[loop].nr}`);
     }
     let subsetPairArray = this.shuffleArray(pairArray);
     return subsetPairArray;
   };
 
-  createTileContent = () => {
+  createTileContent = (nrPairs: number) => {
     //
-    this.singleContent = this.createXFromY(this.size / 2);
+    this.singleContent = this.createXFromY(nrPairs);
   };
 
   /** "mischt" ein Array mit Zahlen durch. Der Algorithmus ist geklaut:

@@ -18,11 +18,12 @@ const App = ({ idx }: AppProps) => {
   let content: Content;
 
   let extensions = getView();
-  let nrTiles = extensions.horizontal * extensions.vertical;
+  let nrVariousTiles = 50; //extensions.horizontal * extensions.vertical;
+  let nrPairs = 12;
 
   useEffect(() => {
     console.log(`this is done only once`);
-    newGame(nrTiles, dispatch);
+    newGame(nrPairs * 2, dispatch);
   });
 
   const onNewGame = () => {
@@ -32,12 +33,12 @@ const App = ({ idx }: AppProps) => {
   const createContent = (nrTiles: number) => {
     console.log(`nr tiles: ${nrTiles}`);
     let content = new Content(nrTiles);
-    content.createTileContent();
+    content.createTileContent(nrPairs);
     content.showContent();
     return content;
   };
 
-  content = createContent(nrTiles);
+  content = createContent(nrVariousTiles);
 
   // let r = document.querySelector(':root');
   // let rs = getComputedStyle(r);
@@ -48,7 +49,11 @@ const App = ({ idx }: AppProps) => {
 
   return (
     <div className="container">
-      <Header extensions={extensions} onNewGame={onNewGame} nrTiles={nrTiles} />
+      <Header
+        extensions={extensions}
+        onNewGame={onNewGame}
+        nrTiles={nrPairs * 2}
+      />
       <div className="content">
         <Main content={content} />
         {/* <aside className="left-sidebar">LEFT SIDEBAR</aside> */}
