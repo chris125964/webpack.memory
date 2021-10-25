@@ -1,3 +1,9 @@
+# 1860 Memory
+
+Dieses Projekt ist das offizielle 1860-Memory.
+
+## Details
+
 Es gibt folgende Werte:
 
 _index_ bezeichnet die laufende Nummer des Tiles (0 für das erste Tile, 29 für das letzte Tile)

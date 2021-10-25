@@ -12,11 +12,16 @@ export const Modal = ({ show, onClose }: ModalProps) => {
     onClose();
   };
 
+  const img = 'landscape';
+
   return (
     <div data-testid="modal.xxx" className={showHideClassName}>
-      <img className="image" src="./assets/images/1860-final-001.jpg" />
-      <button data-testid="modal.close-button" onClick={onCloseWindow}>
-        Close
+      <button
+        className="butt"
+        data-testid="modal.close-button"
+        onClick={onCloseWindow}
+      >
+        <img className={img} src="./assets/images/1860-final-001.jpg" />
       </button>
     </div>
   );
