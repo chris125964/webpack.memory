@@ -230,18 +230,27 @@ footer {
     height: var(--header-memtile-extension-600);
   }
 }
-/*  */
+/* Samsung */
 @media (max-width: 360px) {
   .header {
     background: var(--header-bg-color-360);
     height: var(--header-height-360);
+  }
+  .height {
+    display: none;
+  }
+  .size {
+    display: none;
+  }
+  .length {
+    display: none;
   }
   .memtile {
     width: var(--header-memtile-extension-360);
     height: var(--header-memtile-extension-360);
   }
 }
-/*  */
+/* Unihertz */
 @media (max-width: 320px) {
   .header {
     background: var(--header-bg-color-320);

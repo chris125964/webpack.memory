@@ -31,7 +31,7 @@ export const getView = () => {
     memView.length = 80;
     memView.header.height = 16;
   } else if (window.innerWidth <= 360) {
-    // 360 x 648 -> size: 90px
+    // Samsung: 360 x 648 -> size: 90px
     memView.device = 'Galaxy S40';
     memView.horizontal = 4;
     memView.vertical = 6;
@@ -46,6 +46,7 @@ export const getView = () => {
     memView.length = 120;
     memView.header.height = 72;
   } else if (window.innerWidth <= 640) {
+    // Samsung: 360 x 648
     memView.device = 'Samsung S40';
     memView.horizontal = 4;
     memView.vertical = 5;
@@ -61,12 +62,12 @@ export const getView = () => {
     memView.header.height = 72;
   } else {
     // } else if (window.innerWidth <= 1500) {
-    //  -> 150px
-    // 50px + (10 x 150) x (5 x 150)
+    // Notebook: 1708 x 817 -> size: 150px
+    // 50px + (8 x 213) x (3 x 213)
     memView.device = 'Notebook';
     memView.horizontal = 8;
     memView.vertical = 3;
-    memView.length = 200;
+    memView.length = 213;
     memView.header.height = 50;
   }
 

@@ -29,12 +29,12 @@ export const Header = (props: HeaderProps): JSX.Element => {
       <div className="headerElem height">
         header Height: {props.extensions.header.height}
       </div>
-      <div className="headerElem">
-        w x h: {window.innerWidth} x {window.innerHeight}
+      <div className="headerElem extensions">
+        {window.innerWidth} x {window.innerHeight}
       </div>
       <div className="headerElem device">{props.extensions.device}</div>
-      <div className="headerElem"># Clicks {nrMoves}</div>
-      <div className="headerElem"># Paare {nrPairs}</div>
+      <div className="headerElem clicks"># Clicks {nrMoves}</div>
+      <div className="headerElem pairs"># Paare {nrPairs}</div>
       <div className="headerElem">
         <button
           className="newGame"
