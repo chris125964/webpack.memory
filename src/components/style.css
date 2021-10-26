@@ -198,8 +198,11 @@ footer {
   height: var(--header-memtile-extension-max);
 }
 
-/*  */
+/* Nexus quer */
 @media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
   .header {
     background-color: var(--header-bg-color-960);
     height: var(--header-height-960);
@@ -221,6 +224,9 @@ footer {
 }
 /*  */
 @media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .header {
     background-color: var(--header-bg-color-600);
     height: var(--header-height-600);
@@ -232,6 +238,9 @@ footer {
 }
 /* Samsung */
 @media (max-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .header {
     background: var(--header-bg-color-360);
     height: var(--header-height-360);
@@ -252,6 +261,9 @@ footer {
 }
 /* Unihertz */
 @media (max-width: 320px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .header {
     background: var(--header-bg-color-320);
     height: var(--header-height-320);
